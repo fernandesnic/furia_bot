@@ -18,7 +18,7 @@ Um bot para fãs da FURIA no CS2, desenvolvido com Python e integração opciona
 1️⃣ **Clone o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/furia-bot.git
+git clone https://github.com/fernandesnic/furia-bot.git
 cd furia-bot
 ```
 
