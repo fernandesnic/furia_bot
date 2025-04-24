@@ -105,9 +105,9 @@ FURIA_DATA = {
         "Semifinais IEM Rio Major"
     ],
     "proximos_jogos": [
-        "IEM Cologne 2025 - 15/07/2025",
-        "BLAST Premier Fall Groups - 20/08/2025",
-        "Major Rio 2025 - 10/10/2025"
+        "PGL Asatana 2025 - 15/07/2025",
+        "IEM Dallas - 19/05/2025",
+        "Blast.tv Austin Major 2025 - 03/06/2025"
     ],
     "redes": {
         "Twitter": "https://twitter.com/furiagg",
@@ -280,7 +280,7 @@ def generate_furia_response(user_question: str) -> str:
         'parts': [{
             'text': f"""
             Você é um assistente especializado na equipe brasileira de CS2 da FURIA Esports.
-            Responda em português com dados REAIS e precisos. Esse bot foi criado por Nicolas Fernandes, para um processo seletivo de estágio na furia.
+            Responda em português com dados REAIS e precisos. 
 
             Contexto atual:
             - Elenco: {', '.join(FURIA_DATA['elenco_principal'])}
@@ -290,8 +290,12 @@ def generate_furia_response(user_question: str) -> str:
             Regras: 
             1. Seja técnico mas acessível
             2. Use termos de CS2 quando relevante
-            3. Limite a 250 palavras
+            3. Limite a poucas palavras
             4. Formate para mobile
+            5. Seja objetivo e curto
+            6. Use emotes
+            7. Use uma linguagem informal
+            8. Fale com os jovens.
 
             Pergunta: {user_question}
             """
@@ -322,7 +326,7 @@ async def handle_ai_question(update: Update, context: ContextTypes.DEFAULT_TYPE)
     answer = generate_furia_response(user_question) 
     
     if answer:
-        formatted_answer = f"🐯 *Resposta sobre FURIA* 🐯\n\n{answer}\n\n_Fonte: Dados atualizados 2025_"
+        formatted_answer = f"🐯 *Resposta sobre FURIA* 🐯\n\n{answer}\n\n"
         await update.message.reply_text(formatted_answer, parse_mode='Markdown')
     else:
         await update.message.reply_text(
